@@ -13,7 +13,7 @@ const Loader = () => {
 
     const fadeTimer = setTimeout(() => {
       setFadeOut(true);
-    }, 4500);
+    }, 3500); // Reduced from 4500 to 3500 (only 500ms after zoom starts)
 
     return () => {
       clearTimeout(loadingTimer);
@@ -102,7 +102,7 @@ const Loader = () => {
       {/* Logo positioned at absolute center of viewport */}
       <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
         <div
-          className={`transition-all duration-1500 ease-in-out ${
+          className={`transition-all duration-1000 ease-in-out ${
             fadeOut ? "opacity-0" : "opacity-100"
           } ${
             showZoomAnimation ? "transform scale-[25]" : "transform scale-100"
